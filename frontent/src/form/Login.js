@@ -49,6 +49,7 @@ class LoginForm extends Component {
     loginSuccess = (res) => {
         let history = createHistory()
         let data = res.data
+        console.log('====data:', data)
         if (data.result) {
             let user = {
                 loged: true,

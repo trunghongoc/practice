@@ -3,14 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="81e50d59-26ec-41f9-a7ef-3238cfbc2bc3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/images_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/controller_images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controller/users_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/users_controller.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/DbSmartOffice.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/DbSmartOffice.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker_service/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/docker_service/service.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/containers.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/containers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/images.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/images.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/model/users.py" beforeDir="false" afterPath="$PROJECT_DIR$/model/users.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/router.py" beforeDir="false" afterPath="$PROJECT_DIR$/router.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controller/containers_controller.py" beforeDir="false" afterPath="$PROJECT_DIR$/controller/containers_controller.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_service/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/dockers/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker_service/service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/dockers/service.py" beforeDir="false" afterPath="$PROJECT_DIR$/dockers/service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontent/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontent/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontent/src/form/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontent/src/form/Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontent/src/form/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontent/src/form/User.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,13 +35,13 @@
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="db" value="1" />
-          <entry key="py" value="23" />
+          <entry key="py" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Python" value="21" />
+          <entry key="Python" value="22" />
           <entry key="SQL" value="1" />
         </counts>
       </usages-collector>
@@ -105,16 +105,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/docker_service/service.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/dockers/service.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/users_controller.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+            <state relative-caret-position="215">
+              <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
                 <marker date="1535292309809" expanded="true" signature="454:456" ph="..." />
@@ -176,13 +176,13 @@
       <find>create_user</find>
       <find>confirm_account</find>
       <find>do_login</find>
-      <find>del_userdel_user</find>
       <find>del_user</find>
+      <find>del_userdel_user</find>
     </findStrings>
     <replaceStrings>
       <replace>user_password</replace>
-      <replace>mail</replace>
       <replace>user_name</replace>
+      <replace>mail</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -199,6 +199,7 @@
         <option value="$PROJECT_DIR$/router.py" />
         <option value="$PROJECT_DIR$/model/users.py" />
         <option value="$PROJECT_DIR$/controller/users_controller.py" />
+        <option value="$PROJECT_DIR$/dockers/service.py" />
       </list>
     </option>
   </component>
@@ -236,7 +237,7 @@
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="backend" type="462c0819:PsiDirectoryNode" />
-              <item name="docker_service" type="462c0819:PsiDirectoryNode" />
+              <item name="dockers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="backend" type="b2602c69:ProjectViewProjectNode" />
@@ -374,7 +375,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.19271624" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19271624" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
@@ -384,7 +385,7 @@
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.024734983" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.30565372" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.47173145" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -479,32 +480,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/model/images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
-          <folding>
-            <marker date="1535290885190" expanded="true" signature="125:252" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/controller_images.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
-          <folding>
-            <element signature="e#0#24#0" expanded="true" />
-            <marker date="1535291702324" expanded="true" signature="251:266" ph="..." />
-            <marker date="1535291702324" expanded="true" signature="687:827" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -538,14 +517,39 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/users_controller.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="64" column="33" selection-start-line="64" selection-start-column="33" selection-end-line="64" selection-end-column="33" />
+        <state relative-caret-position="215">
+          <caret line="67" column="14" selection-start-line="67" selection-start-column="14" selection-end-line="67" selection-end-column="14" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
             <marker date="1535292309809" expanded="true" signature="454:456" ph="..." />
           </folding>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="21" selection-start-line="10" selection-start-column="21" selection-end-line="10" selection-end-column="21" />
+          <folding>
+            <marker date="1535290885190" expanded="true" signature="125:252" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/controller_images.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
+            <marker date="1535291702324" expanded="true" signature="251:266" ph="..." />
+            <marker date="1535291702324" expanded="true" signature="687:827" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dockers/service.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>
