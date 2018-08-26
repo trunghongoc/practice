@@ -63,7 +63,7 @@ class User extends Component {
     axios.post(Constants.createUserRoute, this.state)
     .then(
         (res) => {
-          let result = res.result
+          let result = res.data.result
           if (result) {
             Constants.mess.show();
             this.reset();
