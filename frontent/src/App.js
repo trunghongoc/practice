@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import CheckLogin from './components/CheckLogin';
 import UserCreate from './pages/UserCreate'
 import UserEdit from './pages/UserEdit';
+import UserDetail from './pages/UserEdit';
 // redux
 import { Provider } from 'react-redux'
 import configureStore from './store/config'
@@ -20,12 +21,12 @@ class App extends Component {
       <Provider store={store}>
         <Router>
           <div>
-            
+            <Navbar/>
 
             <div className="container-fluid">
               <div className="row">
                 <div className="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
-                  <div className="mr-t-10"></div><Navbar/>
+                  <div className="mr-t-10"></div>
                   <Switch>
                     <Route exact path="/login" component={Login} />
 
@@ -33,6 +34,7 @@ class App extends Component {
                     <Route exact path="/users" component={User} />
                     <Route exact path="/users/create" component={UserCreate} />
                     <Route exact path="/users/edit/:id" component={UserEdit} />
+                    <Route exact path="/users/detail/:id" component={UserDetail} />
                   </Switch>
                 </div>
               </div>

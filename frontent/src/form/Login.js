@@ -57,7 +57,7 @@ class LoginForm extends Component {
             localStorage.setItem('user', JSON.stringify(user))
             this.props.actRedux.actSetUser(user)
             Constants.mess.show()
-            history.go('/')
+            history.push('/')
         } else {
             Constants.mess.show('error', 'Tài khoản hoặc mật khẩu không chính xác')
         }
@@ -77,7 +77,7 @@ class LoginForm extends Component {
 
     const { userRedux } = this.props
     if (userRedux.loged) {
-      return <Redirect to="/users"/>
+      return <Redirect to="/"/>
     }
 
     return (

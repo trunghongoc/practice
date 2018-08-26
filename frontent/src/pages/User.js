@@ -51,8 +51,6 @@ class User extends Component {
       return <Redirect to="/login"/>
     }
 
-    console.log({users, userRedux})
-
     return (
       <div>
         <div className="row">

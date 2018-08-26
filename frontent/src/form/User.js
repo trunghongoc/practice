@@ -110,13 +110,15 @@ class User extends Component {
   }
 
   componentDidMount() {
+    let history = createHistory()
+
     const { typeForm } = this.props
     if (typeForm === 'edit') {
       const user_id = Number(this.props.match.params.id)
       axios.post(Constants.userDetailRoute, {user_id: user_id})
       .then(
           (res) => {
-            let user = res.data.user
+            let user = res.data
             this.setState({
               ...user
             })
@@ -128,11 +130,7 @@ class User extends Component {
 
   render() {
     const { mail, user_password, user_name, position, user_id  } = this.state
-    const { userRedux, typeForm } = this.props
-    if (!userRedux.loged) {
-      return <Redirect to="/login"/>
-    }
-    console.log('state:', this.state)
+    const { typeForm } = this.props
 
     return (
       <div>

@@ -17,10 +17,8 @@ const userRedux = handleActions({
     return { ...state }
   },
   [ActionTypes.SET_USER_INFO]: (state: any, action: any): any => {
-    console.log('payload:', action.payload)
     let newState = state
     newState.user = { ...newState.user, ...action.payload }
-    console.log('state:', newState)
     return newState
   }
 }, initialState)

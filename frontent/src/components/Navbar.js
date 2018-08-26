@@ -81,14 +81,12 @@ class Navbar extends Component {
       loged: false
     })
 
-    console.log('props:', this.props)
-
     localStorage.removeItem('user')
   }
 
   render() {
     const { userRedux } = this.props
-    if (!userRedux.loged) {
+    if (userRedux.loged) {
       return <div></div>
     }
 
