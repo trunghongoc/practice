@@ -1,11 +1,12 @@
 import docker
-import json
 
-class DockerSercice:
-    client = docker.from_env()
+client = docker.from_env()
 
+class DockerService:
+   
     @staticmethod
     def pull(image_name):
+        """pull image"""
         return client.images.pull('{}:latest'.format(image_name))
     @staticmethod
     def pull_image(image_name):
@@ -69,6 +70,3 @@ class DockerSercice:
                 return False
         else:
             return False
-
-
-
