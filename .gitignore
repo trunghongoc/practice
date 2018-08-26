@@ -1,0 +1,42 @@
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/frontent/node_modules
+
+# testing
+/frontent/coverage
+
+# production
+/frontent/build
+
+# misc
+/frontent/.DS_Store
+/frontent/.env.local
+/frontent/.env.development.local
+/frontent/.env.test.local
+/frontent/.env.production.local
+
+/frontent/npm-debug.log*
+/frontent/yarn-debug.log*
+/frontent/yarn-error.log*
+
+
+# dependencies
+frontent/node_modules
+
+# testing
+frontent/coverage
+
+# production
+frontent/build
+
+# misc
+frontent/.DS_Store
+frontent/.env.local
+frontent/.env.development.local
+frontent/.env.test.local
+frontent/.env.production.local
+
+frontent/npm-debug.log*
+frontent/yarn-debug.log*
+frontent/yarn-error.log*
