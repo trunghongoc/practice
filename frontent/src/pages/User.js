@@ -29,9 +29,9 @@ class User extends Component {
     axios.post(Constants.usersRoute, {})
     .then(
       (res) => {
-        let data = res.data
+        let users = res.data.users
         this.setState({
-          data: data
+          users: users
         })
       },
       (error) => { this.showMess(false) }

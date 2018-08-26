@@ -62,7 +62,16 @@ class User extends Component {
   onCreate = () => {
     axios.post(Constants.createUserRoute, this.state)
     .then(
-        (res) => { this.loginSuccess(res); this.reset(); },
+        (res) => {
+          let result = res.result
+          let mess = res.mess
+          if (result) {
+            Constants.mess.show();
+            this.reset();
+          } else {
+            Constants.mess.show('error', 'Lỗi create');
+          }
+        },
         (error) => { Constants.mess.show('error', 'Lỗi'); }
     );
   }
@@ -70,7 +79,16 @@ class User extends Component {
   onUpdate = () => {
     axios.post(Constants.updateUserRoute, this.state)
     .then(
-        (res) => { this.loginSuccess(res); },
+        (res) => {
+          let result = res.result
+          let mess = res.mess
+          if (result) {
+            Constants.mess.show();
+            this.reset();
+          } else {
+            Constants.mess.show('error', 'Lỗi create');
+          }
+        },
         (error) => { Constants.mess.show('error', 'Lỗi'); }
     );
   }
