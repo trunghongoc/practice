@@ -52,7 +52,3 @@ def edit_user():
 
 
 # =============================================== Image controller ==============
-
-@app.route('/images', methods=["GET", "POST"])
-def get_image():
-    return images_controller.show_image()
