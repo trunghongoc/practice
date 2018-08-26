@@ -21,7 +21,6 @@ function mapDispatchToProps(dispatch: Function): Object {
 class User extends Component {
   state = {
     users: [
-      {user_id: 1, mail: 'abc@djhjh.com', user_name: 'Nguyen Van A', position: 'captain'}
     ]
   }
 
@@ -48,9 +47,9 @@ class User extends Component {
   render() {
     const { users } = this.state
     const { userRedux } = this.props
-    // if (!userRedux.loged) {
-    //   return <Redirect to="/login"/>
-    // }
+    if (!userRedux.loged) {
+      return <Redirect to="/login"/>
+    }
 
     return (
       <div>

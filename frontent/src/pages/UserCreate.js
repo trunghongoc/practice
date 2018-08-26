@@ -1,8 +1,4 @@
 import React, { Component } from 'react';
-import { Button, message } from 'antd';
-import { Link } from 'react-router-dom';
-import * as Constants from '../constants/var'
-import axios from 'axios';
 
 import { Redirect } from 'react-router-dom'
 import { connect } from 'react-redux'
@@ -40,11 +36,10 @@ class UserCreate extends Component {
   }
 
   render() {
-    const { users } = this.state
     const { userRedux } = this.props
-    // if (!userRedux.loged) {
-    //   return <Redirect to="/login"/>
-    // }
+    if (!userRedux.loged) {
+      return <Redirect to="/login"/>
+    }
 
     return (
       <div>

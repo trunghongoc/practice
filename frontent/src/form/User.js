@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import { Button, message } from 'antd';
-import { Link } from 'react-router-dom';
+import { Button } from 'antd';
 import * as Constants from '../constants/var'
 import axios from 'axios';
 
 import { Redirect } from 'react-router-dom'
+
 import { connect } from 'react-redux'
 import Input from './../components/Input'
 
@@ -64,7 +64,6 @@ class User extends Component {
     .then(
         (res) => {
           let result = res.result
-          let mess = res.mess
           if (result) {
             Constants.mess.show();
             this.reset();
@@ -81,7 +80,6 @@ class User extends Component {
     .then(
         (res) => {
           let result = res.data.result
-          let mess = res.mess
           if (result) {
             Constants.mess.show();
             this.reset();
@@ -131,9 +129,9 @@ class User extends Component {
   render() {
     const { mail, user_password, user_name, position, user_id  } = this.state
     const { userRedux, typeForm } = this.props
-    // if (!userRedux.loged) {
-    //   return <Redirect to="/login"/>
-    // }
+    if (!userRedux.loged) {
+      return <Redirect to="/login"/>
+    }
     console.log('state:', this.state)
 
     return (
