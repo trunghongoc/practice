@@ -96,13 +96,13 @@ class User extends Component {
     axios.post(Constants.userDeleteRoute, this.state)
     .then(
         (res) => {
+          console.log('====delete:', res.data.result)
           let result = res.data.result
           if (result) {
             Constants.mess.show('success', 'Xóa thành công');
             history.goBack()
           } else {
             Constants.mess.show('error', 'Xóa thất bại');
-            history.goBack()
           }
          },
         (error) => { Constants.mess.show('error', 'Lỗi'); }

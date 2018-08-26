@@ -70,18 +70,23 @@ class Navbar extends Component {
   logout = () => {
     axios.post(Constants.logoutRoute, this.state)
     .then(
-        (res) => { this.showMess(true); },
+        (res) => {
+          if (res.data.result) {
+            this.showMess(true);
+            this.setLogout();
+          } else {
+            Constants.mess.show('error', 'Error')
+          }
+        },
         (error) => { this.showMess(false); }
     );
-    this.setLogout();
   }
 
   setLogout = () => {
+    localStorage.removeItem('user')
     this.props.actRedux.actSetUser({
       loged: false
     })
-
-    localStorage.removeItem('user')
   }
 
   render() {
