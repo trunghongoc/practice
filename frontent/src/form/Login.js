@@ -8,6 +8,8 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import * as userAction from './../actions/user'
 
+import createHistory from 'history/createHashHistory';
+
 import { Redirect } from 'react-router-dom'
 
 function mapStateToProps(state: Object): Object {
@@ -45,6 +47,7 @@ class LoginForm extends Component {
     }
 
     loginSuccess = (res) => {
+        let history = createHistory()
         let data = res.data
         if (data.result) {
             let user = {
@@ -54,6 +57,7 @@ class LoginForm extends Component {
             localStorage.setItem('user', JSON.stringify(user))
             this.props.actRedux.actSetUser(user)
             Constants.mess.show()
+            history.go('/')
         } else {
             Constants.mess.show('error', 'Tài khoản hoặc mật khẩu không chính xác')
         }
