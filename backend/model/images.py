@@ -6,10 +6,7 @@ class Images:
     @staticmethod
     # get size from docker and inser database
     def get_size_image():
-
-
-
-
+        pass
 
 
     @staticmethod

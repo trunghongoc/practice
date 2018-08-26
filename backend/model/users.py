@@ -3,11 +3,11 @@ from model.connect_db import DatabaseDriver
 
 class Users:
     @staticmethod
-    def confirm_account(email, password):
+    def confirm_account(mail, user_password):
         try:
             query = """select * from users
-                        where email = ? and password = ?"""
-            args = [email, password]
+                        where mail = ? and user_password = ?"""
+            args = [mail, user_password]
             result = DatabaseDriver().query_db(query, args, one=True)
         except Exception as e:
             print(e)
@@ -24,15 +24,14 @@ class Users:
         return result
 
     @staticmethod
-    def find_email(email):
+    def find_mail(mail):
         try:
-            query = """select email from users where email = ?"""
-            args = [email]
+            query = """select mail from users where mail = ?"""
+            args = [mail]
             result = DatabaseDriver().query_db(query, args, one=True)
             if result is not None:
                 return True
         except Exception as e:
-            print(e)
             return False
         return False
 
@@ -48,11 +47,11 @@ class Users:
         return result
 
     @staticmethod
-    def create_user(email, password, name, position):
+    def create_user(mail, user_password, name, position):
         try:
             driver = DatabaseDriver()
-            args = [email, password, name, position]
-            new_id = driver.exec_command("""insert into users(email, password, name, position)
+            args = [mail, user_password, name, position]
+            new_id = driver.exec_command("""insert into users(mail, user_password, user_name, position)
                                             values (?, ?, ?, ?, ?)""", args)
             return new_id
         except Exception as e:
@@ -60,14 +59,14 @@ class Users:
             return False
 
     @staticmethod
-    def edit_user(user_id, email, password, name):
+    def edit_user(user_id, mail, user_password, user_name):
         try:
             driver = DatabaseDriver()
-            args = [user_id, email, password, name]
+            args = [user_id, mail, user_password, user_name]
             driver.exec_command("""update users set 
-                                    email=?, 
-                                    password=?, 
-                                    name=?
+                                    mail=?, 
+                                    user_password=?, 
+                                    user_name=?
                                     where user_id=?""", args)
         except Exception as e:
             print(e)

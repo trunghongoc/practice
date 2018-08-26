@@ -6,25 +6,25 @@ import json
 # ------------------------- create user --------------------------------------
 def do_login(request):
     params = request.get_json()
-    email = params['email']
-    password = params['password']
-    user = Users.confirm_account(email, password)
+    mail = params['mail']
+    password = params['user_password']
+    user = Users.confirm_account(mail, password)
     return json.dumps({'result': user is not None, 'user': user})
 
 
 def create_user(request):
     params = request.get_json()
-    name = params['name']
-    email = params['email']
-    password = params['password']
+    name = params['user_name']
+    mail = params['mail']
+    password = params['user_password']
     position = params['position']
 
-    if (name is not None) and (email is not None):
-        get_email_ = Users.find_email(email)
-        if get_email_ is not None:
-            return json.dumps({'result': False, 'mess': 'email is exited'})
+    if (name is not None) and (mail is not None):
+        get_mail_ = Users.find_mail(mail)
+        if get_mail_ is None:
+            return json.dumps({'result': False, 'mess': 'mail is exited'})
         else:
-            if Users.create_user(password, name, email, position):
+            if Users.create_user(password, name, mail, position):
                 return json.dumps({'result': True})
             else:
                 return json.dumps({'result': False, 'mess': 'can not create user'})
@@ -59,6 +59,6 @@ def edit_user(request):
     user_id = params['user_id']
     password = params['password']
     name = params['name']
-    email = params['email']
-    result = Users.edit_user(user_id, email, password, name)
+    mail = params['mail']
+    result = Users.edit_user(user_id, mail, password, name)
     return json.dumps({'result': True}) if result else json.dumps({'result': False})
