@@ -26,7 +26,8 @@ class UserEdit extends Component {
       mail: '',
       user_password: '',
       user_name: '',
-      position: ''
+      position: '',
+      user_id: ''
   }
 
   reset = () => {
@@ -34,13 +35,14 @@ class UserEdit extends Component {
         mail: '',
         user_password: '',
         user_name: '',
-        position: ''
+        position: '',
+        user_id: ''
       }
       this.setState({...state})
   }
 
   render() {
-    const { users } = this.state
+    const { user_id } = this.state
     const { userRedux } = this.props
     // if (!userRedux.loged) {
     //   return <Redirect to="/login"/>
@@ -48,7 +50,7 @@ class UserEdit extends Component {
 
     return (
       <div>
-        <User typeForm="edit"/>
+        <User typeForm="edit" {...this.props} />
       </div>
     );
   }

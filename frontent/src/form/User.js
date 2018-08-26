@@ -80,7 +80,7 @@ class User extends Component {
     axios.post(Constants.updateUserRoute, this.state)
     .then(
         (res) => {
-          let result = res.result
+          let result = res.data.result
           let mess = res.mess
           if (result) {
             Constants.mess.show();
@@ -114,7 +114,8 @@ class User extends Component {
   componentDidMount() {
     const { typeForm } = this.props
     if (typeForm === 'edit') {
-      axios.post(Constants.userDetailRoute, this.state)
+      const user_id = Number(this.props.match.params.id)
+      axios.post(Constants.userDetailRoute, {user_id: user_id})
       .then(
           (res) => {
             let user = res.data.user
@@ -133,6 +134,7 @@ class User extends Component {
     // if (!userRedux.loged) {
     //   return <Redirect to="/login"/>
     // }
+    console.log('state:', this.state)
 
     return (
       <div>
