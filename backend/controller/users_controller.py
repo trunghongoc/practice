@@ -9,7 +9,9 @@ def do_login(request):
     mail = params['mail']
     password = params['user_password']
     user = Users.confirm_account(mail, password)
+    print(user)
     return json.dumps({'result': user is not None, 'user': user})
+
 
 
 def create_user(request):
@@ -57,8 +59,10 @@ def delete_user(request):
 def edit_user(request):
     params = request.get_json()
     user_id = params['user_id']
-    password = params['password']
-    name = params['name']
+    user_password = params['user_password']
+    user_name = params['user_name']
     mail = params['mail']
-    result = Users.edit_user(user_id, mail, password, name)
+    position = params['position']
+
+    result = Users.edit_user(mail, user_password, user_name,position, user_id)
     return json.dumps({'result': True}) if result else json.dumps({'result': False})

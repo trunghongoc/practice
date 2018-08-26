@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
 from controller import users_controller
+import json
 #from controller import  images_controller
 
 
@@ -19,7 +20,9 @@ def show():
 def login():
     result = users_controller.do_login(request)
     return result
-
+@app.route('/logout', methods=["GET", "POST"])
+def logout():
+    return json.dumps({'result':True})
 
 # ========================= User Controller ==================================
 # ------------------------- create user --------------------------------------
@@ -46,7 +49,7 @@ def delete_user():
     return users_controller.delete_user(request)
 
 
-@app.route('/users/edit', methods=["GET", "POST"])
+@app.route('/users/update', methods=["GET", "POST"])
 def edit_user():
     return users_controller.edit_user(request)
 
